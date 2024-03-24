@@ -17,6 +17,7 @@
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<<<<<<< HEAD
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
@@ -24,5 +25,12 @@
 	<context:component-scan base-package="com.blueBiznet.*" />
 	
 	
+=======
+		<beans:property name="prefix" value="/WEB-INF/views/board" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<context:component-scan base-package="com.thoreausawyer.board" />
+>>>>>>> d1b832a40410057fef60758d4de9d2cde2e2a128
 	
 </beans:beans>

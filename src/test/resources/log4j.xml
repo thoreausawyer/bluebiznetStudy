@@ -11,7 +11,11 @@
 	</appender>
 	
 	<!-- Application Loggers -->
+<<<<<<< HEAD
 	<logger name="com.blueBiznet.board">
+=======
+	<logger name="com.thoreausawyer.board">
+>>>>>>> d1b832a40410057fef60758d4de9d2cde2e2a128
 		<level value="info" />
 	</logger>
 	
