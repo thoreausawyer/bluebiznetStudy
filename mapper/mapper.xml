@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.blueBiznet.board.mapper.BoardMapper">
+ 
+ 	<!-- 리스트 불러오기 -->
+ 	<select id="getBoardList" resultType="com.blueBiznet.board.dto.BoardDto">
+ 		<![CDATA[
+	 		SELECT * FROM board WHERE num > 0 ORDER BY num DESC
+ 		]]>
+ 	</select>
+ 	
+ 	<!-- 게시글 작성 -->
+ 	<insert id="insertBoard" parameterType="com.blueBiznet.board.dto.BoardDto" useGeneratedKeys="true" keyProperty="num">
+	    INSERT INTO board (title, content, name, writerEmail, writeDatetime)
+	    VALUES ( #{title}, #{content}, #{name}, #{writerEmail}, SYSDATE)
+	</insert>
+	
+	<!-- 게시물 불러오기 -->
+	<select id="getBoardDetail" resultType="com.blueBiznet.board.dto.BoardDto">
+		SELECT * FROM board WHERE num = #{num}	
+	</select>
+	
+	<!-- 게시물 삭제하기 -->
+	<delete id="deleteBoard">
+		DELETE FROM board where num = #{num}
+	</delete>
+	
+	<!-- 게시물 업데이트 -->
+	<update id="updateBoard">
+		UPDATE board
+		SET tite= #{title},
+		content= #{content},
+		name= #{name},
+		writeUpdateDatetime= sysdate
+		WHERE num = #{num}
+	</update>
+	
+ 
+ </mapper>
